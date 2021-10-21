@@ -6,21 +6,22 @@ function compute()
         principal.focus()
         return
     }
-    let interest = principal.value * years.value * rate.value / 100;
-    yearInFuture = new Date().getFullYear() + parseInt(years.value);
+    let interest = principal * years * rate / 100;
+    var year = new Date().getFullYear() + parseInt(years);
     result = document.getElementById("result")
-    result.innerHTML = "<p>If you deposit <mark>"+ principal.value +"</mark>,<br>an interest rate of <mark>" + rate.value + "%</mark>.<br>You will receive an amount of <mark>"+interest+"</mark>,<br>in the year <mark>"+yearInFuture+"</mark></p>";
+    result.innerHTML = "<p>If you deposit <mark>"+ principal +"</mark>,<br>an interest rate of <mark>" + rate + "%</mark>.<br>You will receive an amount of <mark>"+interest+"</mark>,<br>in the year <mark>"+year+"</mark></p>";
 
 }
 
-function refreshSlider(){
-rate.value
-document.getElementById("rate_val").innerText = rate.value + "%"}
+function updateRate(){
+    var rateval = document.getElementById("rate").value;
+    document.getElementById("rate_val").innerText = rateval;
+}
 
 finishPage = () =>{
-    var rate = document.getElementById("rate");
-    var principal = document.getElementById("principal");
-    var years = document.getElementById("years");
+    var rate = document.getElementById("rate").value;
+    var principal = document.getElementById("principal").value;
+    var years = document.getElementById("years").value;
     years = document.getElementById("years");
     for(i=1; i<=10; i++){
     	let element = document.createElement("option")
